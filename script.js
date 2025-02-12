@@ -18,13 +18,20 @@ let currentPhotoIndex = 0;  // Start at the first photo
 
 let music = document.getElementById('background-music');
 
+// Trigger audio play on first user interaction (e.g., clicking "Start" or tapping anywhere)
+document.addEventListener('touchstart', function () {
+    if (music.paused) {
+        music.play();
+    }
+});
+
 // Function to change the image and quote to the next one in the array
 function changePhoto() {
     currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
     document.getElementById('photo').src = photos[currentPhotoIndex];
     document.getElementById('quote').innerText = quotes[currentPhotoIndex];
 
-    // Play music only after the button is clicked and only if it's not already playing
+    // Play music when switching to the next photo if not already playing
     if (music.paused) {
         music.play();
     }
