@@ -16,7 +16,6 @@ const quotes = [
 
 let currentPhotoIndex = 0;  // Start at the first photo
 
-// Get the audio element
 let music = document.getElementById('background-music');
 
 // Function to change the image and quote to the next one in the array
@@ -25,9 +24,9 @@ function changePhoto() {
     document.getElementById('photo').src = photos[currentPhotoIndex];
     document.getElementById('quote').innerText = quotes[currentPhotoIndex];
 
-    // Play music when switching to the next photo if not already playing
+    // Play music only after the button is clicked and only if it's not already playing
     if (music.paused) {
-        music.play();  // Play if it's paused
+        music.play();
     }
 }
 
