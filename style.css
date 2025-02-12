@@ -8,7 +8,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
 }
 
 .card {
@@ -17,9 +16,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     text-align: center;
-    width: 90%;
+    width: 80%;
     max-width: 600px;
-    overflow: hidden;
 }
 
 h1 {
@@ -32,7 +30,6 @@ h1 {
     height: auto;
     margin: 10px 0;
     border-radius: 10px;
-    max-height: 400px;
 }
 
 #quote {
@@ -65,6 +62,10 @@ button:hover {
     background-color: #ff3b50;
 }
 
+audio {
+    display: none;
+}
+
 #next-btn {
     background-color: #ff9f9f;
     margin-top: 20px;
@@ -75,30 +76,10 @@ button:hover {
     background-color: #ff6b81;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
 
-    #quote, blockquote {
-        font-size: 16px;
-    }
-
-    button {
-        padding: 12px 20px;
-        font-size: 16px;
-    }
-
-    #next-btn {
-        font-size: 14px;
-    }
-
-    .card {
-        padding: 20px;
-        width: 95%;
-    }
-
-    .photos img {
-        margin: 5px 0;
-    }
+#photo {
+    max-width: 100%; /* Ensures the image width doesn't exceed the container */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes any extra space below the image */
+    margin-bottom: 20px; /* Adds space below the image to prevent it from touching the title */
 }
