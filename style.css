@@ -4,10 +4,9 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     height: 100vh;
+    display: block;
 }
 
 .card {
@@ -15,14 +14,16 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    text-align: center;
     width: 80%;
-    max-width: 600px;
+    margin: 0 auto; /* Centers the card horizontally */
+    max-width: 600px; /* Limit the maximum width */
+    box-sizing: border-box; /* Ensures padding doesn't exceed total width */
 }
 
 h1 {
     font-size: 36px;
     color: #ff6b81;
+    margin-bottom: 20px;
 }
 
 .photos img {
@@ -76,5 +77,56 @@ audio {
     background-color: #ff6b81;
 }
 
+#photo {
+    max-width: 100%; /* Ensures the image width doesn't exceed the container */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes any extra space below the image */
+    margin-bottom: 20px; /* Adds space below the image to prevent it from touching the title */
+}
 
+/* Media Queries for Smaller Screens (Mobile Devices) */
+@media (max-width: 600px) {
+    .card {
+        width: 90%; /* Take up 90% of the screen width on mobile */
+        padding: 20px; /* Adjust padding for smaller screen */
+    }
+
+    h1 {
+        font-size: 28px; /* Smaller title on mobile */
+    }
+
+    #quote, blockquote {
+        font-size: 16px; /* Slightly smaller quotes */
+    }
+
+    button {
+        padding: 12px 20px; /* Adjust button padding */
+        font-size: 16px; /* Smaller font size for mobile buttons */
+    }
+
+    #next-btn {
+        font-size: 14px;
+    }
+
+    .photos img {
+        margin: 5px 0; /* Reduce margin between images on mobile */
+    }
+}
+
+/* Media Queries for Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 32px; /* Slightly smaller title on tablets */
+    }
+
+    button {
+        padding: 14px 22px;
+        font-size: 17px;
+    }
+
+    .card {
+        width: 85%; /* Reduce width for tablets to fit better */
+        padding: 25px;
+    }
+}
 
