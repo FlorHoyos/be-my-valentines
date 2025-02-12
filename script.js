@@ -8,19 +8,27 @@ const photos = [
 
 // Array of quotes corresponding to each photo
 const quotes = [
-    "\"You are my sunshine, my only sunshine.\" 💫",
+    "\"You are the most amazing boyfriend, you are mine.\" 💫",
     "\"Love is composed of a single soul inhabiting two bodies.\" - Aristotle",
-    "\"You are my heart, my life, my one and only thought.\" - Arthur Conan Doyle",
+    "\"You are my heart, my life, my one and only thought.\" - love forever",
     "\"Every love story is beautiful, but ours is my favorite.\" 💖"
 ];
 
 let currentPhotoIndex = 0;  // Start at the first photo
+
+// Get the audio element
+let music = document.getElementById('background-music');
 
 // Function to change the image and quote to the next one in the array
 function changePhoto() {
     currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
     document.getElementById('photo').src = photos[currentPhotoIndex];
     document.getElementById('quote').innerText = quotes[currentPhotoIndex];
+
+    // Play music when switching to the next photo if not already playing
+    if (music.paused) {
+        music.play();  // Play if it's paused
+    }
 }
 
 // Attach event listeners to the buttons
