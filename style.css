@@ -75,3 +75,11 @@ audio {
 #next-btn:hover {
     background-color: #ff6b81;
 }
+
+
+#photo {
+    max-width: 100%; /* Ensures the image width doesn't exceed the container */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes any extra space below the image */
+    margin-bottom: 20px; /* Adds space below the image to prevent it from touching the title */
+}
